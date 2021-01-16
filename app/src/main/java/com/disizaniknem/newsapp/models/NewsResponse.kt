@@ -1,4 +1,6 @@
-package com.disizaniknem.newsapp
+package com.disizaniknem.newsapp.models
+
+import com.disizaniknem.newsapp.models.Article
 
 data class NewsResponse(
     val articles: List<Article>,

@@ -1,4 +1,4 @@
-package com.disizaniknem.newsapp
+package com.disizaniknem.newsapp.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

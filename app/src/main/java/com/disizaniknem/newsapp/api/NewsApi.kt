@@ -1,6 +1,6 @@
 package com.disizaniknem.newsapp.api
 
-import com.disizaniknem.newsapp.NewsResponse
+import com.disizaniknem.newsapp.models.NewsResponse
 import com.disizaniknem.newsapp.util.Constants.Companion.API_KEY
 import retrofit2.Response
 import retrofit2.http.GET
