@@ -8,20 +8,26 @@ import androidx.navigation.fragment.navArgs
 import com.disizaniknem.newsapp.R
 import com.disizaniknem.newsapp.ui.NewsActivity
 import com.disizaniknem.newsapp.ui.NewsViewModel
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_article.*
 
 class ArticleFragment : Fragment(R.layout.fragment_article) {
 
-    lateinit var newsViewModel: NewsViewModel
+    lateinit var viewModel: NewsViewModel
     val args: ArticleFragmentArgs by navArgs()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        newsViewModel = (activity as NewsActivity).viewModel
+        viewModel = (activity as NewsActivity).viewModel
         val article = args.article
         webView.apply {
             webViewClient = WebViewClient()
             loadUrl(article.url)
+        }
+
+        fab.setOnClickListener {
+            viewModel.saveArticle(article)
+            Snackbar.make(view, "Article saved succesfully", Snackbar.LENGTH_SHORT).show()
         }
     }
 
