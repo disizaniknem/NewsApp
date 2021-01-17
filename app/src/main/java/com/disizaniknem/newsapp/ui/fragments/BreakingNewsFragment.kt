@@ -17,15 +17,15 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
 
     val TAG = "BreakingNewsFragment"
 
-    lateinit var newsViewModel: NewsViewModel
+    lateinit var viewModel: NewsViewModel
     lateinit var newsAdapter: NewsAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        newsViewModel = (activity as NewsActivity).viewModel
+        viewModel = (activity as NewsActivity).viewModel
         setupRecyclerView()
 
-        newsViewModel.breakingNews.observe(viewLifecycleOwner, Observer { response ->
+        viewModel.breakingNews.observe(viewLifecycleOwner, Observer { response ->
             when (response) {
                 is Resource.Success -> {
                     hideProgressBar()
