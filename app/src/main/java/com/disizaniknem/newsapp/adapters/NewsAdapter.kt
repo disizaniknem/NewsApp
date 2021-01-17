@@ -1,4 +1,4 @@
-package com.disizaniknem.adapters
+package com.disizaniknem.newsapp.adapters
 
 import android.view.LayoutInflater
 import android.view.View
